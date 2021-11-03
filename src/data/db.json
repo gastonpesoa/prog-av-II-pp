@@ -1,94 +1,66 @@
 {
-  "movies": [
+  "tipos": [
+    {
+      "id": 1,
+      "descripcion": "Perro"
+    },
+    {
+      "id": 2,
+      "descripcion": "Gato"
+    },
     {
       "id": 3,
-      "titulo": "Love Letter",
-      "genero": "Drama|Romance"
+      "descripcion": "Reptil"
     },
     {
       "id": 4,
-      "titulo": "Petrified Forest, The",
-      "genero": "Crime|Drama|Romance"
+      "descripcion": "Pez"
     },
     {
       "id": 5,
-      "titulo": "Plaisir, Le",
-      "genero": "Comedy|Drama"
+      "descripcion": "Roedor"
+    }
+  ],
+  "mascotas": [
+    {
+      "id": 1,
+      "nombre": "Bobby",
+      "edad": 9,
+      "tipo": "Perro",
+      "vacunado": true,
+      "observaciones": "Bobby se porta muy bien esta contento siempre"
     },
     {
-      "id": 6,
-      "titulo": "Firepower",
-      "genero": "Action|Drama|Thriller"
+      "id": 2,
+      "nombre": "Fido",
+      "edad": 3,
+      "tipo": "Gato",
+      "vacunado": true,
+      "observaciones": "Es un gato muy peludo"
     },
     {
-      "id": 7,
-      "titulo": "Naked Jungle, The",
-      "genero": "Adventure|Drama"
+      "id": 3,
+      "nombre": "Lolo",
+      "edad": 2,
+      "tipo": "Roedor",
+      "vacunado": false,
+      "observaciones": "Cuidado que muerde"
     },
     {
-      "id": 8,
-      "titulo": "Frozen",
-      "genero": "Drama"
+      "id": 4,
+      "nombre": "Colita",
+      "edad": 6,
+      "tipo": "Perro",
+      "vacunado": true,
+      "observaciones": "Mea por todos lados"
     },
     {
-      "id": 9,
-      "titulo": "Alucarda",
-      "genero": "Horror|Thriller"
-    },
-    {
-      "id": 10,
-      "titulo": "Pressed",
-      "genero": "Action|Crime|Drama|Thriller"
-    },
-    {
-      "id": 11,
-      "titulo": "Kung Pow: Enter the Fist",
-      "genero": "Action|Comedy"
-    },
-    {
-      "id": 12,
-      "titulo": "Suspect, The (Yong-eui-ja)",
-      "genero": "Action|Thriller"
-    },
-    {
-      "id": 13,
-      "titulo": "Sin City: A Dame to Kill For",
-      "genero": "Action|Crime|Thriller"
-    },
-    {
-      "id": 14,
-      "titulo": "Conformist, The (Conformista, Il)",
-      "genero": "Drama"
-    },
-    {
-      "id": 15,
-      "titulo": "Xuxa in Crystal Moon",
-      "genero": "Children|Comedy|Romance"
-    },
-    {
-      "id": 16,
-      "titulo": "Words, The",
-      "genero": "Drama|Romance"
-    },
-    {
-      "id": 17,
-      "titulo": "Leaves from Satan's Book (Blade af Satans bog)",
-      "genero": "Drama"
-    },
-    {
-      "id": 18,
-      "titulo": "No Man's Land",
-      "genero": "Drama|War"
-    },
-    {
-      "id": 19,
-      "titulo": "Tesla: Master of Lightning",
-      "genero": "Documentary"
-    },
-    {
-      "id": 20,
-      "titulo": "Pete Smalls Is Dead",
-      "genero": "Comedy"
+      "id": 1635982050703,
+      "nombre": "Cacho",
+      "edad": "2",
+      "tipo": "Perro",
+      "vacunado": true,
+      "observaciones": "nada"
     }
   ]
 }

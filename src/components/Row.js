@@ -1,24 +1,30 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-const Row = ({ movie, setMovieEdit, deleteMovie }) => {
-    const { id, titulo, genero } = movie;
+const Row = ({ mascota, setMascotaEdit, borrarMascota }) => {
+    const { id, nombre, tipo } = mascota;
     return (
         <tr>
-            <td>{titulo}</td>
-            <td>{genero}</td>
+            <td>{nombre}</td>
+            <td>{tipo}</td>
             <td>
                 <button
                     onClick={() => {
-                        setMovieEdit(movie)
+                        setMascotaEdit(mascota)
                     }}
                 >
-                    Update
+                    Modificar
                 </button>
                 <button
-                    onClick={() => { deleteMovie(id) }}
+                    onClick={() => { borrarMascota(id) }}
                 >
-                    Delete
+                    Eliminar
                 </button>
+                <Link to={`mascota/${id}`}>
+                    <button>
+                        Detalle
+                    </button>
+                </Link>
             </td>
         </tr>
     )

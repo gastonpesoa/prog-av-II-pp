@@ -1,11 +1,14 @@
-import React from 'react'
-// import logo from '../assests/logo.png'
+import React, { Component } from 'react'
+import Titulo from './Titulo';
 
-export const Header = () => {
-    return (
-        <header>
-            {/* <img src={logo} alt="movies"/> */}
-            <h1>CRUD MOVIES</h1>
-        </header>
-    )
+class Header extends Component {
+    render() {
+        return (
+            <header>
+                <Titulo>CRUD DE MASCOTAS</Titulo>
+            </header>
+        )
+    }
 }
+
+export default Header;

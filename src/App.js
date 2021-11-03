@@ -1,13 +1,20 @@
-import Crud from "./components/Crud";
-import { Header } from "./components/Header";
+import React from 'react'
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
+import MascotaPage from './pages/MascotaPage';
+import Error404 from './pages/Error404';
 
 function App() {
   
   return (
-    <div className="container">
-      <Header/>
-      <Crud/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mascota/:id" element={<MascotaPage />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

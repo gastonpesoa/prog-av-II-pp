@@ -1,22 +1,45 @@
 import React, { useEffect, useState } from 'react'
-//import { movies } from '../data/data';
+import Select from './Select';
 
 const initialForm = {
     id: null,
-    titulo: "",
-    genero: ""
+    nombre: "",
+    edad: 0,
+    tipo: "default",
+    vacunado: false,
+    observaciones: ""
 }
 
-const Form = ({ createMovie, updateMovie, movieEdit, setMovieEdit }) => {
+const Form = ({ crearMascota, modificarMascota, mascotaEdit, setMascotaEdit }) => {
 
     const [form, setForm] = useState(initialForm)
-    const { id, titulo, genero } = form;
+    const { id, nombre, edad, tipo, vacunado, observaciones } = form;
+    const [checked, setChecked] = useState(false);
 
     useEffect(() => {
-        if (movieEdit) {
-            setForm(movieEdit);
+        if (mascotaEdit) {
+            setForm(mascotaEdit);
         }
-    }, [movieEdit])
+    }, [mascotaEdit])
+
+    const handledCheck = () => {
+        setChecked(!checked)
+        setForm((form) => {
+            return {
+                ...form,
+                vacunado: !checked
+            }
+        })
+    }
+
+    const handledSelectChange = (e) => {
+        setForm((form) => {
+            return {
+                ...form,
+                tipo: e
+            }
+        })
+    }
 
     const handledChange = (e) => {
         setForm((form) => {
@@ -29,43 +52,72 @@ const Form = ({ createMovie, updateMovie, movieEdit, setMovieEdit }) => {
 
     const handledSubmit = (e) => {
         e.preventDefault();
-        if (!titulo || !genero) {
+        if (!nombre || !edad || !tipo) {
             alert("Faltan datos")
             return;
         }
         if (id) {
-            updateMovie(form)
+            modificarMascota(form)
         } else {
-            createMovie(form)
+            crearMascota(form)
         }
         handledReset();
     }
 
     const handledReset = (e) => {
         setForm(initialForm);
-        setMovieEdit(null);
+        setMascotaEdit(null);
     }
 
     return (
         <>
-            <h2>{id ? "Update Movie" : "Add Movie"}</h2>
+            <h2>{id ? "Modificar Mascota" : "Agregar Mascota"}</h2>
             <form onSubmit={handledSubmit}>
-                <input
-                    type="text"
-                    name="titulo"
-                    placeholder="Titulo"
-                    autoComplete="false"
-                    value={titulo}
-                    onChange={handledChange}
-                />
-                <input
-                    type="text"
-                    name="genero"
-                    placeholder="Genero"
-                    autoComplete="false"
-                    value={genero}
-                    onChange={handledChange}
-                />
+                <p>
+                    <input
+                        type="text"
+                        name="nombre"
+                        placeholder="nombre"
+                        autoComplete="false"
+                        value={nombre}
+                        onChange={handledChange}
+                    />
+                </p>
+                <p>
+                    <input
+                        type="number"
+                        name="edad"
+                        placeholder="edad"
+                        autoComplete="false"
+                        value={edad}
+                        onChange={handledChange}
+                    />
+                </p>
+                <p>
+                    <Select
+                        name="tipo"
+                        value={tipo}
+                        onSelectChange={handledSelectChange}
+                    />
+                </p>
+                <p>
+                    <label>Vacunado?: </label>
+                    <input
+                        name="vacunado"
+                        type="checkbox"
+                        defaultChecked={vacunado}
+                        onChange={handledCheck}
+                    />
+                </p>
+                <p>
+                    <textarea
+                        name="observaciones"
+                        type="text"
+                        placeholder="observaciones"
+                        value={observaciones}
+                        onChange={handledChange}
+                    />
+                </p>
                 <input
                     type="submit"
                     value="Enviar"

@@ -1,25 +1,25 @@
 import React from 'react'
 import Row from './Row'
 
-const Table = ({ data, setMovieEdit, deleteMovie }) => {
+const Table = ({ data, setMascotaEdit, borrarMascota }) => {
     return (<>
-        <h2>Movies List</h2>
+        <h2>Mascotas Lista</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Titulo</th>
-                    <th>Genero</th>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 {data.length
-                    ? (data.map(movie => (
+                    ? (data.map(mascota => (
                         <Row
-                            key={movie.id}
-                            movie={movie}
-                            setMovieEdit={setMovieEdit}
-                            deleteMovie={deleteMovie}
+                            key={mascota.id}
+                            mascota={mascota}
+                            setMascotaEdit={setMascotaEdit}
+                            borrarMascota={borrarMascota}
                         />)))
                     : <tr><td colSpan={3}>No hay datos</td></tr> }
             </tbody>

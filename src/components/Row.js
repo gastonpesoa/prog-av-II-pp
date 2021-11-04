@@ -10,13 +10,13 @@ const Row = ({ mascota, setMascotaEdit, borrarMascota }) => {
             <td>
                 <Link to={`mascota/${id}`}>
                     <button
-                        class="button is-success mr-2"
+                        className="button is-success mr-2"
                     >
                         Detalle
                     </button>
                 </Link>
                 <button
-                    class="button is-warning mr-2"
+                    className="button is-warning mr-2"
                     onClick={() => {
                         setMascotaEdit(mascota)
                     }}
@@ -24,7 +24,7 @@ const Row = ({ mascota, setMascotaEdit, borrarMascota }) => {
                     Modificar
                 </button>
                 <button
-                    class="button is-danger"
+                    className="button is-danger"
                     onClick={() => { borrarMascota(id) }}
                 >
                     Eliminar

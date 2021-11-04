@@ -4,7 +4,7 @@ import Row from './Row'
 const Table = ({ data, setMascotaEdit, borrarMascota }) => {
     return (<>
         <h2 className="subtitle">Lista de Mascotas</h2>
-        <table class="table">
+        <table className="table">
             <thead>
                 <tr>
                     <th>Nombre</th>

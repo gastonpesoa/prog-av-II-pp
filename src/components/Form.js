@@ -53,7 +53,7 @@ const Form = ({ crearMascota, modificarMascota, mascotaEdit, setMascotaEdit }) =
 
     const handledSubmit = (e) => {
         e.preventDefault();
-        if (!nombre || !edad || tipo == "default") {
+        if (!nombre || !edad || tipo === "default") {
             alert("Faltan datos")
             return;
         }

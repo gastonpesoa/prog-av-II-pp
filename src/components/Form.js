@@ -18,6 +18,7 @@ const Form = ({ crearMascota, modificarMascota, mascotaEdit, setMascotaEdit }) =
 
     useEffect(() => {
         if (mascotaEdit) {
+            setChecked(mascotaEdit.vacunado)
             setForm(mascotaEdit);
         }
     }, [mascotaEdit])
@@ -52,7 +53,7 @@ const Form = ({ crearMascota, modificarMascota, mascotaEdit, setMascotaEdit }) =
 
     const handledSubmit = (e) => {
         e.preventDefault();
-        if (!nombre || !edad || !tipo) {
+        if (!nombre || !edad || tipo == "default") {
             alert("Faltan datos")
             return;
         }
@@ -105,7 +106,7 @@ const Form = ({ crearMascota, modificarMascota, mascotaEdit, setMascotaEdit }) =
                     <input
                         name="vacunado"
                         type="checkbox"
-                        defaultChecked={vacunado}
+                        checked={vacunado}
                         onChange={handledCheck}
                     />
                 </p>

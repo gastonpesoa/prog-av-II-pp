@@ -54,10 +54,10 @@ const Crud = () => {
             body: JSON.stringify(mascotaAModificar)
         })
             .then(res => res.json())
-            .then(movieUpdated => {
+            .then(mascotaModificada => {
                 setMascotas((mascotas) => {
-                    return mascotas.map((movie) =>
-                        movie.id === movieUpdated.id ? movieUpdated : movie
+                    return mascotas.map((mascota) =>
+                        mascota.id === mascotaModificada.id ? mascotaModificada : mascota
                     )
                 })
             })

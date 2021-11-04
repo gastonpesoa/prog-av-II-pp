@@ -134,7 +134,8 @@ const Form = ({ crearMascota, modificarMascota, mascotaEdit, setMascotaEdit }) =
                 <div className="field">
                     <div className="control">
                         <textarea
-                            className="textarea"
+                            className="textarea is-half"
+                            cols="5"
                             name="observaciones"
                             type="text"
                             placeholder="observaciones"

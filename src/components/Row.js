@@ -8,7 +8,15 @@ const Row = ({ mascota, setMascotaEdit, borrarMascota }) => {
             <td>{nombre}</td>
             <td>{tipo}</td>
             <td>
+                <Link to={`mascota/${id}`}>
+                    <button
+                        class="button is-success mr-2"
+                    >
+                        Detalle
+                    </button>
+                </Link>
                 <button
+                    class="button is-warning mr-2"
                     onClick={() => {
                         setMascotaEdit(mascota)
                     }}
@@ -16,15 +24,11 @@ const Row = ({ mascota, setMascotaEdit, borrarMascota }) => {
                     Modificar
                 </button>
                 <button
+                    class="button is-danger"
                     onClick={() => { borrarMascota(id) }}
                 >
                     Eliminar
                 </button>
-                <Link to={`mascota/${id}`}>
-                    <button>
-                        Detalle
-                    </button>
-                </Link>
             </td>
         </tr>
     )

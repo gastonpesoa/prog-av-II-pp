@@ -24,6 +24,7 @@ const Select = ({name, value, onSelectChange}) => {
     }
 
     return (
+
         <select name={name} value={value} onChange={handleChange} >
             <option value="default" disabled>Seleccioná un tipo</option>
              {

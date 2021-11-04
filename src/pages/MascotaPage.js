@@ -22,14 +22,27 @@ const MascotaPage = () => {
     }, [id])
 
     return (
-        <div>
-            <Link to="/">Volver</Link>
-            <h1>Nombre: {nombre}</h1>
-            <p>Edad: {edad}</p>
-            <p>Tipo: {tipo}</p>
-            <p>Vacunado: {vacunado ? "SI" : "NO"}</p>
-            <p>Observaciones: {observaciones}</p>
-        </div>
+        <section className="section">
+            <div className="container">
+                <Link to="/"><button class="button is-rounded">Volver</button></Link>
+                <div className="card">
+                    <div className="card-content">
+                        <div className="media">
+                            <div className="media-content">
+                                <p className="title is-4"> {nombre}</p>
+                                <p className="subtitle is-6">Edad: {edad}</p>
+                                <p className="subtitle is-6">{tipo}</p>
+                                <p className="subtitle is-6">Vacunado: {vacunado ? "SI" : "NO"}</p>
+                            </div>
+                        </div>
+
+                        <div className="content">
+                            {observaciones}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }
 

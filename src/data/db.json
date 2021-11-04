@@ -26,8 +26,8 @@
       "id": 1,
       "nombre": "Bobby",
       "edad": 9,
-      "tipo": "Perro",
-      "vacunado": true,
+      "tipo": "Gato",
+      "vacunado": false,
       "observaciones": "Bobby se porta muy bien esta contento siempre"
     },
     {
@@ -53,14 +53,6 @@
       "tipo": "Perro",
       "vacunado": true,
       "observaciones": "Mea por todos lados"
-    },
-    {
-      "id": 1635982050703,
-      "nombre": "Cachooo",
-      "edad": "2",
-      "tipo": "Perro",
-      "vacunado": true,
-      "observaciones": "nada"
     }
   ]
 }

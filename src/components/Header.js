@@ -4,9 +4,11 @@ import Titulo from './Titulo';
 class Header extends Component {
     render() {
         return (
-            <header>
-                <Titulo>CRUD DE MASCOTAS</Titulo>
-            </header>
+            <section className="section">
+                <header>
+                    <Titulo>CRUD DE MASCOTAS</Titulo>
+                </header>
+            </section>
         )
     }
 }

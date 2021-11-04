@@ -72,62 +72,91 @@ const Form = ({ crearMascota, modificarMascota, mascotaEdit, setMascotaEdit }) =
 
     return (
         <>
-            <h2>{id ? "Modificar Mascota" : "Agregar Mascota"}</h2>
+            <h2 className="subtitle">{id ? "Modificar Mascota" : "Agregar Mascota"}</h2>
+
             <form onSubmit={handledSubmit}>
-                <p>
-                    <input
-                        type="text"
-                        name="nombre"
-                        placeholder="nombre"
-                        autoComplete="false"
-                        value={nombre}
-                        onChange={handledChange}
-                    />
-                </p>
-                <p>
-                    <input
-                        type="number"
-                        name="edad"
-                        placeholder="edad"
-                        autoComplete="false"
-                        value={edad}
-                        onChange={handledChange}
-                    />
-                </p>
-                <p>
-                    <Select
-                        name="tipo"
-                        value={tipo}
-                        onSelectChange={handledSelectChange}
-                    />
-                </p>
-                <p>
-                    <label>Vacunado?: </label>
-                    <input
-                        name="vacunado"
-                        type="checkbox"
-                        checked={vacunado}
-                        onChange={handledCheck}
-                    />
-                </p>
-                <p>
-                    <textarea
-                        name="observaciones"
-                        type="text"
-                        placeholder="observaciones"
-                        value={observaciones}
-                        onChange={handledChange}
-                    />
-                </p>
-                <input
-                    type="submit"
-                    value="Enviar"
-                />
-                <input
-                    type="reset"
-                    value="Limpiar"
-                    onClick={handledReset}
-                />
+                <div className="field">
+                    <label className="label">Nombre</label>
+                    <div className="control">
+                        <input
+                            type="text"
+                            name="nombre"
+                            placeholder="nombre"
+                            autoComplete="false"
+                            value={nombre}
+                            onChange={handledChange}
+                        />
+                    </div>
+                </div>
+
+                <div className="field">
+                    <label className="label">Edad</label>
+                    <div className="control">
+                        <input
+                            type="number"
+                            name="edad"
+                            placeholder="edad"
+                            autoComplete="false"
+                            value={edad}
+                            onChange={handledChange}
+                        />
+                    </div>
+                </div>
+
+                <div className="field">
+                    <label className="label">Tipo: </label>
+                    <div className="control">
+                        <div className="select">
+                            <Select
+                                name="tipo"
+                                value={tipo}
+                                onSelectChange={handledSelectChange}
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="field">
+                    <div className="control">
+                        <label className="checkbox">
+                            <input
+                                className="mr-3"
+                                name="vacunado"
+                                type="checkbox"
+                                checked={vacunado}
+                                onChange={handledCheck}
+                            />
+                            Vacunado
+                        </label>
+                    </div>
+                </div>
+
+                <div className="field">
+                    <div className="control">
+                        <textarea
+                            className="textarea"
+                            name="observaciones"
+                            type="text"
+                            placeholder="observaciones"
+                            value={observaciones}
+                            onChange={handledChange}
+                        />
+                    </div>
+                </div>
+
+                <div className="field is-grouped">
+                    <div className="control">
+                        <button
+                            className="button is-link mr-5"
+                            type="submit"
+                        >Enviar</button>
+                        <button
+                            className="button is-link"
+                            type="reset"
+                            onClick={handledReset}
+                        >Limpiar</button>
+                    </div>
+                </div>
             </form>
         </>
     )

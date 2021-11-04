@@ -3,8 +3,8 @@ import Row from './Row'
 
 const Table = ({ data, setMascotaEdit, borrarMascota }) => {
     return (<>
-        <h2>Mascotas Lista</h2>
-        <table>
+        <h2 className="subtitle">Lista de Mascotas</h2>
+        <table class="table">
             <thead>
                 <tr>
                     <th>Nombre</th>

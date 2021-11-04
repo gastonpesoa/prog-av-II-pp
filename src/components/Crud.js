@@ -18,7 +18,7 @@ const Crud = () => {
             try {
                 const res = await fetch(url);
                 const data = await res.json();
-                console.log("mascotas: ",data);
+                console.log("mascotas: ", data);
                 setMascotas(data);
                 setloading(false);
             } catch (error) {
@@ -88,23 +88,32 @@ const Crud = () => {
     }
 
     return (
-        <section>
-            <Form
-                crearMascota={crearMascota}
-                modificarMascota={modificarMascota}
-                setMascotaEdit={setMascotaEdit}
-                mascotaEdit={mascotaEdit}
-            />
-            {
-                loading
-                    ? (<Loader />)
-                    : (<Table
-                        data={mascotas}
+        <div className="columns">
+            <div className="column">
+                <section className="section">
+                    {
+                        loading
+                            ? (<Loader />)
+                            : (<Table
+                                data={mascotas}
+                                setMascotaEdit={setMascotaEdit}
+                                borrarMascota={borrarMascota}
+                            />)
+                    }
+                </section>
+
+            </div>
+            <div className="column">
+                <section className="section">
+                    <Form
+                        crearMascota={crearMascota}
+                        modificarMascota={modificarMascota}
                         setMascotaEdit={setMascotaEdit}
-                        borrarMascota={borrarMascota}
-                    />)
-            }
-        </section>
+                        mascotaEdit={mascotaEdit}
+                    />
+                </section>
+            </div>
+        </div>
     )
 }
 

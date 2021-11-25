@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const URL = "http://localhost:5000/tipos/";
+const URL = "http://localhost:3000/api/tipos/";
 
 const Select = ({name, value, onSelectChange}) => {
 
@@ -11,7 +11,7 @@ const Select = ({name, value, onSelectChange}) => {
             try {
                 const res = await fetch(url);
                 const data = await res.json();
-                setTipos(data)
+                setTipos(data.data)
             } catch (error) {
 
             }

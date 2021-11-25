@@ -25,9 +25,9 @@
     {
       "id": 1,
       "nombre": "Bobby",
-      "edad": 9,
-      "tipo": "Gato",
-      "vacunado": false,
+      "edad": "11",
+      "tipo": "Reptil",
+      "vacunado": true,
       "observaciones": "Bobby se porta muy bien esta contento siempre"
     },
     {
@@ -45,14 +45,6 @@
       "tipo": "Roedor",
       "vacunado": false,
       "observaciones": "Cuidado que muerde"
-    },
-    {
-      "id": 4,
-      "nombre": "Colita",
-      "edad": 6,
-      "tipo": "Perro",
-      "vacunado": true,
-      "observaciones": "Mea por todos lados"
     }
   ]
 }
